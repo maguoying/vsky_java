@@ -1,9 +1,9 @@
-package com.maguoying.test;
+package com.maguoying.action;
 
-public class Test {
+public class Refer {
 
 	public static void main(String[] args) {
-		Test t = new Test();
+		Refer t = new Refer();
 		t.first();
 	}
 	

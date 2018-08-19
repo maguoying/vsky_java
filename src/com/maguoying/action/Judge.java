@@ -1,4 +1,4 @@
-package com.maguoying.test;
+package com.maguoying.action;
 
 public class Judge {
 
