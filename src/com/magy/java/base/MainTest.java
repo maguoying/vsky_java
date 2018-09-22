@@ -1,4 +1,4 @@
-package com.maguoying.base;
+package com.magy.java.base;
 
 public class MainTest {
 	public static void main(String[] args) {

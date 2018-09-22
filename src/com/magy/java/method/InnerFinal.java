@@ -1,4 +1,4 @@
-package com.maguoying.method;
+package com.magy.java.method;
 /**
  * @author maguoying@188.com
  *

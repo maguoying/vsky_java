@@ -1,4 +1,4 @@
-package com.maguoying.base;
+package com.magy.java.base;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

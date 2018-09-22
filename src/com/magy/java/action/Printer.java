@@ -1,4 +1,4 @@
-package com.maguoying.action;
+package com.magy.java.action;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.maguoying.action;
+package com.magy.java.action;
 
 public class Refer {
 
