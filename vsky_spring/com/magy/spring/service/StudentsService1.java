@@ -3,7 +3,7 @@ package com.magy.spring.service;
 import com.magy.spring.dao.StudentsDAO;
 import com.magy.spring.dto.Student;
 /**
- * 构造器注入测试
+ * set方法注入
  * 
  * @author maguoying@188.com
  * @date 2018年9月23日下午12:06:03

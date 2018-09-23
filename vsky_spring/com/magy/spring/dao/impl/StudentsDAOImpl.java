@@ -3,7 +3,7 @@ package com.magy.spring.dao.impl;
 import com.magy.spring.dao.StudentsDAO;
 import com.magy.spring.dto.Student;
 
-public class StudentsDAOimpl implements StudentsDAO {
+public class StudentsDAOImpl implements StudentsDAO {
 
 	@Override
 	public void saveStudents(Student s) {
