@@ -1,8 +1,5 @@
 package com.magy.spring.test;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.magy.spring.base.BeanFactory;
 import com.magy.spring.service.Disk;
 
@@ -13,18 +10,21 @@ import junit.framework.TestCase;
  * @date 2018年9月22日下午2:15:59
  */
 public class DiskTest extends TestCase {
+	private Disk disk;
 	
+	public void setDisk(Disk disk) {
+		this.disk = disk;
+	}
+
 	public void testRead() {
-		@SuppressWarnings("resource")
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-		Disk disk = (Disk) ctx.getBean("movedisk");
+//		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+//		Disk disk = (Disk) ctx.getBean("movedisk");
 		disk.read();
 	}
 	
 	public void testWrite() {
-		@SuppressWarnings("resource")
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-		Disk disk = (Disk) ctx.getBean("usbdisk");
+//		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+//		Disk disk = (Disk) ctx.getBean("usbdisk");
 		disk.write("vsky");
 	}
 	

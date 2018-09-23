@@ -1,8 +1,8 @@
 package com.magy.java.stream;
 
 import java.io.File ;
-import java.io.InputStream ;
 import java.io.FileInputStream ;
+import java.io.InputStream ;
 /**
  * @author maguoying@188.com
  * inputstreamDemo训练
