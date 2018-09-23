@@ -32,9 +32,24 @@
 	<bean id="bussinessFactory" class="com.magy.spring.base.BusinessFactory3"></bean>
 	<bean id="sInstanceDAO" factory-bean="bussinessFactory"  factory-method="getStudentsDAOInstance" />
 	<bean id="uInstanceDAO" factory-bean="bussinessFactory" factory-method="getUsersDAOInstance" />
+	
 	<bean id="studentsInstanceService" class="com.magy.spring.service.StudentsService4">
 		<property name="sdao" ref="sInstanceDAO" />
 		<property name="s" ref="student" />
+		<property name="cities">
+			<list>
+				<value>甘肃</value>
+				<value>南京</value>
+				<value>北京</value>
+			</list>
+		</property>
+		<property name="grades">
+			<map key-type="java.lang.String" value-type="java.lang.Integer">
+				<entry key="Math" value="92" />
+				<entry key="English" value="92" />
+				<entry key="Computer" value="95" />
+			</map>
+		</property>
 	</bean>
 	<bean id="usersInstanceService" class="com.magy.spring.service.UsersService">
 		<property name="udao" ref="uInstanceDAO" />

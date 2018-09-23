@@ -1,13 +1,12 @@
 package com.magy.spring.test;
 
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.magy.spring.base.BusinessFactory;
-import com.magy.spring.dao.StudentsDAO;
-import com.magy.spring.dao.UsersDAO;
-import com.magy.spring.dto.Student;
-import com.magy.spring.dto.User;
 import com.magy.spring.service.StudentsService4;
 import com.magy.spring.service.UsersService;
 
@@ -42,5 +41,19 @@ public class FactoryTest extends TestCase {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-factory.xml");
 		UsersService usersService = (UsersService) ctx.getBean("usersInstanceService");
 		usersService.save();
+	}
+	
+	public void testContainer() {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-factory.xml");
+		StudentsService4 usersService = (StudentsService4) ctx.getBean("studentsInstanceService");
+		Iterator i = usersService.getCities().iterator();
+		while(i.hasNext()) {
+			System.out.println(i.next());
+		}
+		System.out.println("=========================================");
+		Set<Entry<String, Integer>> entrys = usersService.getGrades().entrySet();
+		for(Entry<String, Integer> entry : entrys) {
+			System.out.println(entry.getKey() + ":" + entry.getValue());
+		}
 	}
 }
