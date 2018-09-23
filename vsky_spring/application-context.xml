@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	 xmlns="http://www.springframework.org/schema/beans"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:p="http://www.springframework.org/schema/p"
-     xmlns:context="http://www.springframework.org/schema/context"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:annotation-config />
+	<context:annotation-config /><!-- 这一行用来支持注解 -->
+	
 	<bean id="movedisk" class="com.magy.spring.service.MoveDisk"></bean>
 	
 	<bean id="usbdisk" class="com.magy.spring.service.UsbDisk"></bean>
@@ -14,11 +12,6 @@
 	<bean id="student" class="com.magy.spring.dto.Student"></bean>
 	
 	<bean id="studentsDAO" class="com.magy.spring.dao.impl.StudentsDAOimpl"></bean>
-	
-	<bean id="studentsService" class="com.magy.spring.service.StudentsService">
-		<!-- setter方法注入 -->
-		<property name="sDao" ref="studentsDAO"></property>
-	</bean>
 	
 	<bean id="student1" class="com.magy.spring.dto.Student">
 		<!-- 构造器注入,value传入字符串 -->
@@ -31,6 +24,17 @@
 		<constructor-arg index="0" value="2"></constructor-arg>
 		<constructor-arg index="1" value="赵敏"></constructor-arg>
 		<constructor-arg index="2" value="女"></constructor-arg>
+	</bean>
+	
+	<bean id="studentsService" class="com.magy.spring.service.StudentsService">
+		<!-- setter方法注入 -->
+		<property name="sdao" ref="studentsDAO"></property>
+	</bean>
+	
+	<bean id="studentsService1" class="com.magy.spring.service.StudentsService1">
+		<!-- setter方法注入 -->
+		<property name="sdao" ref="studentsDAO"></property>
+		<property name="s" ref="student2"></property>
 	</bean>
 	
 	<bean id="studentsService2" class="com.magy.spring.service.StudentsService2">

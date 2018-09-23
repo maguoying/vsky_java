@@ -12,6 +12,10 @@ public class StudentsService2 {
 	private StudentsDAO sDao;
 	private Student s;
 
+	public StudentsService2() {
+		super();
+	}
+
 	public StudentsService2(StudentsDAO sDao, Student s) {
 		super();
 		this.sDao = sDao;

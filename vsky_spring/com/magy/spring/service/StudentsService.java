@@ -11,13 +11,13 @@ import com.magy.spring.dto.Student;
  */
 public class StudentsService {
 
-	private StudentsDAO sDao;
+	private StudentsDAO sdao;
 
-	public void setsDao(StudentsDAO sDao) {
-		this.sDao = sDao;
+	public void setSdao(StudentsDAO sdao) {
+		this.sdao = sdao;
 	}
 
 	public void service(Student s) {
-		sDao.saveStudents(s);
+		sdao.saveStudents(s);
 	}
 }
