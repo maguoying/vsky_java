@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 定义两个对象 -->
+	<bean id="student" class="com.magy.spring.dto.Student">
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg index="1" value="张三丰"></constructor-arg>
+		<constructor-arg index="2" value="男"></constructor-arg>
+	</bean>
+	<bean id="user" class="com.magy.spring.dto.User">
+		<property name="username" value="admin"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	
+	<!-- 静态工厂方法 -->
+	<bean id="studentsDAO" class="com.magy.spring.base.BusinessFactory2" factory-method="getStudentsDAOInstance" />
+	<bean id="usersDAO" class="com.magy.spring.base.BusinessFactory2" factory-method="getUsersDAOInstance" />
+	
+	<bean id="studentsService" class="com.magy.spring.service.StudentsService4">
+		<property name="sdao" ref="studentsDAO" />
+		<property name="s" ref="student" />
+	</bean>
+	<bean id="usersService" class="com.magy.spring.service.UsersService">
+		<property name="udao" ref="usersDAO" />
+		<property name="u" ref="user" />
+	</bean>
+	
+	<!-- 实例工厂方法 -->
+	<bean id="bussinessFactory" class="com.magy.spring.base.BusinessFactory3"></bean>
+	<bean id="sInstanceDAO" factory-bean="bussinessFactory"  factory-method="getStudentsDAOInstance" />
+	<bean id="uInstanceDAO" factory-bean="bussinessFactory" factory-method="getUsersDAOInstance" />
+	<bean id="studentsInstanceService" class="com.magy.spring.service.StudentsService4">
+		<property name="sdao" ref="sInstanceDAO" />
+		<property name="s" ref="student" />
+	</bean>
+	<bean id="usersInstanceService" class="com.magy.spring.service.UsersService">
+		<property name="udao" ref="uInstanceDAO" />
+		<property name="u" ref="user" />
+	</bean>
+</beans>
