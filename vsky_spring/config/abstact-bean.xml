@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+     ">
+
+	<context:component-scan base-package="com.magy.spring.dto"></context:component-scan>
+	<!-- 定义抽象类 -->
+	<bean id="teacher" class="com.magy.spring.dto.Teacher" abstract="true">
+		<property name="name" value="张无忌"></property>
+		<property name="age" value="43"></property>
+	</bean>
+	<!-- 继承抽象类，继承才有name和age对应的值 -->
+	<bean id="mathTeacher" class="com.magy.spring.dto.MathTeacher" parent="teacher">
+		<property name="number" value="23"></property>
+	</bean>
+	
+	<bean id="diService" class="com.magy.spring.service.DIService"></bean>
+</beans>

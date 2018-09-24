@@ -2,6 +2,8 @@ package com.magy.spring.dto;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 public class Student {
 	private int id;
 	private String name;
