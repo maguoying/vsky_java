@@ -11,7 +11,7 @@
 	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="libs/spring-aop-5.1.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-aspects-5.1.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libs/spring-beans-5.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-beans-5.1.0.RELEASE.jar" sourcepath="C:/Users/ADMINI~1/AppData/Local/Temp/.org.sf.feeling.decompiler1537754563538/source/spring-beans-5.1.0.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="libs/spring-context-5.1.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-context-indexer-5.1.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/spring-context-support-5.1.0.RELEASE.jar"/>

@@ -55,4 +55,5 @@
 		<property name="udao" ref="uInstanceDAO" />
 		<property name="u" ref="user" />
 	</bean>
+	
 </beans>
