@@ -1,25 +1,29 @@
 package com.magy.spring.base;
 
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
-public class TeacherDAOproxy implements InvocationHandler {
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
+
+public class TeacherDAOproxy implements MethodInterceptor {
 	private Object obj;
 	
 	public Object bind(Object obj) {
 		this.obj=obj;
-		obj = Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), this);
-		return obj;
+		Enhancer enhancer = new Enhancer();
+		enhancer.setSuperclass(obj.getClass());
+		enhancer.setCallback(this);
+		return enhancer.create();
 	}
 	public void preInvoke() {
 		System.out.println("进入动态代理。。。");
 	}
 
 	@Override
-	public Object invoke(Object obj, Method method, Object[] arg2) throws Throwable {
+	public Object intercept(Object obj, Method method, Object[] arg, MethodProxy proxy) throws Throwable {
 		preInvoke();
-		Object result = method.invoke(this.obj, arg2);
+		Object result = proxy.invokeSuper(obj, arg);
 		return result;
 	}
 

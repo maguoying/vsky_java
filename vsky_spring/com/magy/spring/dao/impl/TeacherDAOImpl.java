@@ -2,7 +2,7 @@ package com.magy.spring.dao.impl;
 
 import com.magy.spring.dao.TeacherDAO;
 
-public class TeacherDAOImpl implements TeacherDAO {
+public class TeacherDAOImpl extends TeacherDAO {
 
 	@Override
 	public void teach() {

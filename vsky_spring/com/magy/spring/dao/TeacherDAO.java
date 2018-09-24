@@ -1,6 +1,6 @@
 package com.magy.spring.dao;
 
-public interface TeacherDAO {
+public abstract class TeacherDAO {
 
-	public void teach();
+	public abstract void teach();
 }
